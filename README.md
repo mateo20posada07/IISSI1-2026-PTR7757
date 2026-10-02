@@ -2,10 +2,10 @@
 
 ## Miembros del grupo LX-XXX-X (sustituir)
 
-1. Apellidos, Nombre
-1. Apellidos, Nombre
-1. Apellidos, Nombre
-1. Apellidos, Nombre
+1. Posada Quintero, Mateo
+2. Herrero González, María del Pilar
+3. Pablo Morales, Adrián
+4. González García, Valeria
 
 ## 1. Introducción al problema
 
