@@ -40,75 +40,75 @@ para [razón]
 #### 4.1.1. Requisitos de información
 
 ##### R.I.01. Registro y Expediente del Socio
-Como Administrador,
-quiero almacenar y consultar el expediente completo de cada socio
-para gestionar sus datos personales, controlar el estado de su cuenta y asignarle sus credenciales de acceso.
+Como **Administrador**,  
+quiero **almacenar y consultar el expediente completo de cada socio**  
+para **gestionar sus datos personales, controlar el estado de su cuenta y vincular sus credenciales físicas de acceso**.
 
 **Pruebas de aceptación**
-- El sistema debe verificar que el DNI y el Email introducidos no pertenezcan a un usuario ya registrado en la base de datos.
-- Se debe guardar obligatoriamente: DNI, Nombre, Apellidos, Teléfono, Email, Fecha de Nacimiento, Dirección, Estado (Alta, Baja, Suspendido), Código QR asignado y la Tarifa contratada.
-- Se debe asignar de forma automatizada un código QR único e intransferible asociado al socio para el control de accesos.
+- El sistema debe verificar que el DNI, el Email y el código del dispositivo NFC introducidos no pertenezcan a un usuario ya registrado en la base de datos.
+- Se debe guardar obligatoriamente: DNI, Nombre, Apellidos, Teléfono, Email, Fecha de Nacimiento, Dirección, Estado (`Alta`, `Baja`, `Suspendido`), Código de Llavero/Tarjeta NFC asignado y la Tarifa contratada.
+- Se debe vincular el identificador único del llavero NFC (`UID_NFC`) al socio para autorizar el paso en los tornos.
 
 
-#### R.I.02. Expediente e Historial de Trabajadores
-Como Administrador,
-quiero registrar los datos personales, contractuales y la especialización de cada empleado
-para gestionar la plantilla del gimnasio y organizar la asignación de tareas o clases.
+##### R.I.02. Expediente e Historial de Trabajadores
+Como **Administrador**,  
+quiero **registrar los datos personales, contractuales y la especialización de cada empleado**  
+para **gestionar la plantilla del gimnasio y organizar la asignación de tareas o clases**.
 
 **Pruebas de aceptación**
-- El sistema debe verificar que el DNI y el IBAN del trabajador no están previamente registrados.
+- El sistema debe verificar que el DNI y el IBAN del trabajador no estén previamente registrados.
 - Se debe guardar obligatoriamente: DNI, Nombre completo, Teléfono, Email, IBAN, NUSS y Salario Base.
 - En caso de ser *Monitor*, se debe registrar su área de especialidad deportiva.
-- En caso de ser *Personal de Limpieza ó Mantenimiento*, se debe registrar su turno de trabajo y zona registrada.
+- En caso de ser *Personal de Limpieza o Mantenimiento*, se debe registrar su turno de trabajo y zona asignada.
 
 
-#### R.I.03. Catálogo de Tarifas y Oferta Comercial
-Como Administrador,
-quiero definir y mantener actualizado el catálogo de tarifas y cuotas
-para establecer los precios, periodicidad de cobro y condiciones de uso del gimnasio.
+##### R.I.03. Catálogo de Tarifas y Oferta Comercial
+Como **Administrador**,  
+quiero **definir y mantener actualizado el catálogo de tarifas y cuotas**  
+para **establecer los precios, periodicidad de cobro y condiciones de uso del gimnasio**.
 
-**Pruebas de Aceptación**
+**Pruebas de aceptación**
 - El sistema debe comprobar que el Nombre de la tarifa sea único en el catálogo.
-- Se debe guardar obligatoriamente: Nombre de la tarifa, Precio, Periodicidad (número de meses:1 para mensual, 12 para anual), y un booleano sobre si incluye o no acceso a las clases colectivas
+- Se debe guardar obligatoriamente: Nombre de la tarifa, Precio, Periodicidad (número de meses: 1 para mensual, 12 para anual) y un booleano sobre si incluye o no acceso a las clases colectivas.
 
 
-#### R.I.04. Historia de Pagos y Transacciones
-Como Administrador
-quiero almacenar los registros de todos los cobros y recibos emitidos
-para llevar el control de la facturación, identificar impagos y gestionar vías de cobro.
+##### R.I.04. Historial de Pagos y Transacciones
+Como **Administrador**,  
+quiero **almacenar los registros de todos los cobros y recibos emitidos**  
+para **llevar el control de la facturación, identificar impagos y gestionar vías de cobro**.
 
-**Pruebas de Aceptación**
+**Pruebas de aceptación**
 - El sistema debe generar un Número de Recibo secuencial y único para cada transacción.
-- Se debe guardar obligatoriamente: Número de Recibo, Socio asociado, Tarifa cobrada, Fecha emisión, Fecha de Pago, Importe, Método de Pago (Tarjeta, Efectivo) y Estado del Pago (Pendiente, Pagado)
+- Se debe guardar obligatoriamente: Número de Recibo, Socio asociado, Tarifa cobrada, Fecha de Emisión, Fecha de Pago, Importe, Método de Pago (`Tarjeta`, `Efectivo`, `Domiciliación`) y Estado del Pago (`Pendiente`, `Pagado`, `Devuelto`).
 
 
-#### R.I.05. Registro de Fichajes y Accesos Físicos
-Como Sistema de Control de Acceso
-quiero almacenar cada intento de fichaje en el torno de entrada
-para mantener la trazabilidad de afluencia y verificar el cumplimiento de las políticas de acceso.
+##### R.I.05. Registro de Fichajes y Accesos Físicos
+Como **Sistema de Control de Acceso**,  
+quiero **almacenar cada intento de lectura del llavero NFC en el torno de entrada**  
+para **mantener la trazabilidad de afluencia y verificar el cumplimiento de las políticas de acceso**.
 
-**Pruebas de Aceptación**
-- El sistema debe registrar de forma automática la Fecha y Hora exacta de cada intento de fichaje.
-- Se debe guardar obligatoriamente: Id del Socio, Fecha, Hora exacta, Torno de entrada y Resultado del acceso (Permitido, Denegado).
-
-
-#### R.I.06. Planificación de Clases Colectivas
-Como Monitor
-quiero consultar la programación de las clases asignadas y el listado de reservas
-para impartir la actividad conociendo el número de plazas ocupadas.
-
-**Pruebas de Acceptación**
-- Para cada clase colectiva programada se debe de guardar: Disciplina, Fecha, Hora de Inicio, Hora Fin, Sala asignada, Aforo máximo y Monitor responsable.
-- Para cada reserva vinculada a la clase se debe guardar: Socio solicitante, Fecha de Reserva y Estado de la reserva (Confirmada, Cancelada)
+**Pruebas de aceptación**
+- El sistema debe registrar de forma automática la Fecha y Hora exacta de cada lectura del dispositivo NFC.
+- Se debe guardar obligatoriamente: ID del Socio (asociado al `UID_NFC`), Fecha, Hora exacta, Torno de entrada y Resultado del acceso (`Permitido`, `Denegado`).
 
 
-#### R.I.07. Pate de Incidencias de Maquinaria
-Como Personal de Mantenimiento
-quiero registrar y consultar el estado de las máquinas averiadas o en revisión
-para planificar las tareas de reparación y coordinar el estado de las instalaciones.
+##### R.I.06. Planificación de Clases Colectivas
+Como **Monitor**,  
+quiero **consultar la programación de las clases asignadas y el listado de reservas**  
+para **impartir la actividad conociendo el número de plazas ocupadas**.
 
-**Pruebas de Aceptación**
-- El sistema debe guardar obligatoriamente: Código de la máquina, Nombre, Marca, Ubicación, Estado (Operativa, Averiada, En Mantenimiento), Fecha de Reporte, Descripción del fallo, boolean que indique si está resuelta o no, si lo está adjuntar la Fecha de reparación
+**Pruebas de aceptación**
+- Para cada clase colectiva programada se debe guardar: Disciplina, Fecha, Hora de Inicio, Hora Fin, Sala asignada, Aforo máximo y Monitor responsable.
+- Para cada reserva vinculada a la clase se debe guardar: Socio solicitante, Fecha de Reserva y Estado de la reserva (`Confirmada`, `Cancelada`).
+
+
+##### R.I.07. Parte de Incidencias de Maquinaria
+Como **Personal de Mantenimiento**,  
+quiero **registrar y consultar el estado de las máquinas averiadas o en revisión**  
+para **planificar las tareas de reparación y coordinar el estado de las instalaciones**.
+
+**Pruebas de aceptación**
+- El sistema debe guardar obligatoriamente: Código de la máquina, Nombre, Marca, Ubicación, Estado (`Operativa`, `Averiada`, `En Mantenimiento`), Fecha de Reporte, Descripción del fallo y un indicador booleano de si está resuelta (adjuntando la Fecha de reparación en caso afirmativo).
 
 #### 4.1.2. Reglas de negocio
 
