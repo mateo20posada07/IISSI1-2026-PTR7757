@@ -1,4 +1,4 @@
-# Título Proyecto
+# FitManager
 
 ## Miembros del grupo LX-XXX-X (sustituir)
 
@@ -39,16 +39,15 @@ para [razón]
 
 #### 4.1.1. Requisitos de información
 
-##### R.I.01. Título requisito de información
-
-Como [tipo de usuario]
-quiero [servicio]
-para [razón]
+##### R.I.01. Registro y Expediente del Socio
+Como Administrador,
+quiero almacenar y consultar el expediente completo de cada socio
+para gestionar sus datos personales, controlar el estado de su cuenta y asignarle sus credenciales de acceso.
 
 **Prueba de aceptación**
-- Descripción de la primera comprobación a realizar
-- Descripción de la segunda comprobación a realizar
-- ...
+- El sistema debe verificar que el DNI y el Email introducidos no pertenezcan a un usuario ya registrado en la base de datos.
+- Se debe guardar obligatoriamente: DNI, Nombre, Apellidos, Teléfono, Email, Fecha de Nacimiento, Dirección, Estado (Alta, Baja, Suspendido), Código QR asignado y la Tarifa contratada.
+- Se debe asignar de forma automatizada un código QR único e intransferible asociado al socio para el control de accesos.
 
 #### 4.1.2. Reglas de negocio
 
