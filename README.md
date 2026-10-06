@@ -25,7 +25,106 @@
 
 ### 4.1. Requisitos funcionales
 
+#### R.F.01. Listar socios por estado
 
+Como administrador quiero listar los socios filtrando por estado (alta, baja o suspendido) para conocer la situación de la base de socios.
+
+**Prueba de aceptación**
+
+- El listado muestra DNI, nombre, apellidos, teléfono, email y estado de cada socio.
+- Al filtrar por un estado, solo aparecen los socios con ese estado.
+- Si ningún socio cumple el filtro, el sistema muestra un listado vacío.
+
+#### R.F.02. Consultar el historial de accesos de un socio
+
+Como administrador quiero consultar los accesos de un socio a las instalaciones para revisar su asistencia y los intentos de entrada denegados.
+
+**Prueba de aceptación**
+
+- Se muestran fecha, hora exacta, torno de entrada y resultado de cada acceso.
+- Los accesos aparecen ordenados del más reciente al más antiguo.
+- Al filtrar por rango de fechas o por resultado, solo se muestran los accesos que lo cumplen.
+
+#### R.F.03. Listar recibos por estado de pago
+
+Como administrador quiero listar los recibos filtrando por estado (pendiente, pagado o devuelto) para controlar los impagos y las devoluciones.
+
+**Prueba de aceptación**
+
+- Cada recibo muestra número, fecha de emisión, fecha de pago (si existe), importe, método de pago, estado y socio.
+- Al filtrar por estado, solo aparecen los recibos de ese estado.
+- Se puede acotar el listado por rango de fechas de emisión.
+
+#### R.F.04. Consultar mis pagos
+
+Como socio quiero consultar mis recibos y la tarifa que tengo contratada para saber qué he pagado y qué me falta por pagar.
+
+**Prueba de aceptación**
+
+- Se muestran únicamente los recibos del socio que consulta.
+- Se muestra el nombre, el precio y la periodicidad de su tarifa.
+- Se distinguen claramente los recibos pendientes de los pagados.
+
+#### R.F.05. Consultar las clases colectivas con plazas disponibles
+
+Como socio quiero listar las clases colectivas programadas con las plazas libres que quedan para elegir a cuál quiero asistir.
+
+**Prueba de aceptación**
+
+- Cada clase muestra disciplina, fecha, hora de inicio, hora de fin, sala, monitor y plazas libres (aforo máximo menos reservas confirmadas).
+- Se puede filtrar por disciplina y por fecha.
+- Una clase completa aparece indicada como sin plazas.
+
+#### R.F.06. Consultar mis reservas
+
+Como socio quiero consultar mis reservas de clases colectivas y su estado (confirmada o cancelada) para recordar a qué clases tengo que ir.
+
+**Prueba de aceptación**
+
+- Se muestran solo las reservas del socio que consulta, con la clase asociada y la fecha de reserva.
+- Al filtrar por estado, solo aparecen las reservas de ese estado.
+- Las reservas aparecen ordenadas por fecha de la clase.
+
+#### R.F.07. Consultar la lista de asistentes de una clase
+
+Como monitor quiero consultar los socios con reserva confirmada en una de mis clases para saber quién y cuántas personas van a asistir.
+
+**Prueba de aceptación**
+
+- Solo se puede consultar una clase impartida por el propio monitor.
+- Se muestran nombre y apellidos de los socios con reserva confirmada.
+- Las reservas canceladas no aparecen en la lista.
+- Se muestra el total de asistentes frente al aforo máximo.
+
+#### R.F.08. Consultar mi horario de clases
+
+Como monitor quiero listar las clases que imparto, ordenadas por fecha y hora para organizar mi jornada.
+
+**Prueba de aceptación**
+
+- Se muestran disciplina, fecha, hora de inicio, hora de fin y sala de cada clase.
+- Se puede filtrar por rango de fechas.
+- Solo aparecen las clases del monitor que consulta.
+
+#### R.F.09. Listar averías pendientes de resolver
+
+Como personal de limpieza/mantenimiento quiero listar las averías sin resolver con la máquina afectada para priorizar las reparaciones.
+
+**Prueba de aceptación**
+
+- Cada avería muestra código y nombre de la máquina, ubicación, fecha de reporte y descripción del fallo.
+- Solo aparecen las averías no resueltas.
+- Se ordenan de la más antigua a la más reciente.
+
+#### R.F.10. Consultar el historial de averías de una máquina
+
+Como personal de limpieza/mantenimiento quiero consultar todas las averías que ha tenido una máquina para detectar las que fallan con más frecuencia.
+
+**Prueba de aceptación**
+
+- Se muestran fecha de reporte, descripción, estado, si está resuelta y fecha de reparación.
+- Se incluyen tanto las averías resueltas como las pendientes.
+- Se muestra el número total de averías de la máquina.
 
 #### 4.1.1. Requisitos de información
 
