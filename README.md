@@ -1,6 +1,6 @@
 # FitManager_S.O_Edition
 
-## Miembros del grupo LX-XXX-X (sustituir)
+## Miembros del grupo L2-ABS-7
 
 1. Posada Quintero, Mateo
 2. Herrero González, María del Pilar
