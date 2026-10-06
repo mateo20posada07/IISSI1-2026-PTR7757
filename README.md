@@ -112,9 +112,30 @@ para **planificar las tareas de reparación y coordinar el estado de las instala
 
 #### 4.1.2. Reglas de negocio
 
-##### R.N.01. Título regla negocio
+##### R.N.01. Tiempo mínimo entre accesos
 
-Descripción de la regla de negocio.
+ No se podrá acceder por el torno más de una vez con el mismo NFC hasta que no hayan transcurrido 4 horas de su último uso.
+
+##### R.N.02. Límite de reservas por aforo
+
+El número de reservas confirmadas para una clase no puede superar el aforo disponible.
+
+##### R.N.03. No duplicidad de horarios del monitor
+
+Un monitor no puede tener asignadas dos clases cuyo día y hora se solapen.
+
+##### R.N.04. Acceso condicionado al estado del socio
+
+Un socio solo puede acceder al centro si su cuenta está en estado "Alta" y no tiene recibos impagados. Si está en "Baja" o "Suspendida", el torno deniega la entrada.
+
+##### R.N.05. Asignación de tareas según el tipo de trabajador
+
+Solo los trabajadores de tipo "Monitor" pueden ser asignados como responsables de clases. El personal de Limpieza/Mantenimiento solo puede tener asignados turnos y tareas de mantenimiento, y no clases.
+
+##### R.N.06. No solapamiento de clases en una misma sala
+
+Una sala no puede tener programadas dos clases cuyo día y hora se solapen. Además, la clase debe impartirse en una sala adecuada a su disciplina (por ejemplo, Spinning en la sala de Spinning).
+
 
 ### 4.2. Mapa de historias de usuario (opcional)
 
