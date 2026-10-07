@@ -73,7 +73,6 @@ Como socio quiero listar las clases colectivas programadas con las plazas libres
 
 - Cada clase muestra disciplina, fecha, hora de inicio, hora de fin, sala, monitor y plazas libres (aforo máximo menos reservas confirmadas).
 - Se puede filtrar por disciplina y por fecha.
-- Una clase completa aparece indicada como sin plazas.
 
 #### R.F.06. Consultar mis reservas
 
@@ -87,13 +86,12 @@ Como socio quiero consultar mis reservas de clases colectivas y su estado (confi
 
 #### R.F.07. Consultar la lista de asistentes de una clase
 
-Como monitor quiero consultar los socios con reserva confirmada en una de mis clases para saber quién y cuántas personas van a asistir.
+Como monitor quiero consultar el número de socios con reserva confirmada en una de mis clases para saber cuántas personas van a asistir.
 
 **Prueba de aceptación**
 
 - Solo se puede consultar una clase impartida por el propio monitor.
-- Se muestran nombre y apellidos de los socios con reserva confirmada.
-- Las reservas canceladas no aparecen en la lista.
+- Las reservas canceladas no se tienen en cuenta.
 - Se muestra el total de asistentes frente al aforo máximo.
 
 #### R.F.08. Consultar mi horario de clases
