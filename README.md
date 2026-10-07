@@ -9,8 +9,33 @@
 
 ## 1. Introducción al problema
 
-- Descripción del problema para poner en contexto el proyecto, incluyendo información sobre los clientes y usuarios, la situación actual, problemas, expectativas, etc. Se valorará la presencia de información multimedia (fotos, gráficos, documentos escaneados, etc.).
+# 1. Introducción al problema
+# 1. Introducción y Planteamiento del Problema
 
+**FitManager** es una plataforma integral de gestión diseñada para centros deportivos. Su modelo operativo abarca áreas de musculación, entrenamiento funcional y una oferta variada de disciplinas dirigidas (como Spinning, Pilates o Yoga). La dinámica diaria del centro implica la interacción constante de cuatro perfiles de usuario: equipo de administración, cuerpo técnico/monitores, personal de mantenimiento y servicios, y los propios socios.
+
+Actualmente, el gimnasio opera mediante un modelo híbrido basado en procesos manuales y soluciones informáticas aisladas. Esta falta de integración genera serios cuellos de botella e ineficiencias operativas que afectan directamente a la calidad del servicio:
+
+* **Saturación y falta de control en los accesos:** El control en recepción se basa en la verificación visual de carnés por parte del personal, lo que provoca aglomeraciones constantes en las horas de mayor afluencia. Asimismo, la instalación carece de un sistema electromecánico automatizado (tornos con validación por NFC) capaz de bloquear la entrada a usuarios con cuotas pendientes o abonos suspendidos, o de restringir el paso continuado con un mismo distintivo en intervalos breves.
+
+  ![Tornos electromecánicos con lector NFC](https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSwWoastgeLAevmZ_27i1htmD9ICODWeohSq96N_g8s22XSCE2igpC_akFpnP-4HfdYVxFEICbfbpewU_E)
+
+* **Deficiente organización de las actividades dirigidas:** La reserva de plazas se gestiona de forma presencial, un método propenso al exceso de aforo en las sesiones más demandadas o a la reserva de plazas que finalmente quedan desiertas. Por otro lado, el personal instructor no dispone de un medio en tiempo real para verificar el listado definitivo de asistentes antes de iniciar la sesión.
+
+* **Desconexión en la gestión de cobros e impagados:** La emisión de facturas y el cobro de mensualidades se tramitan de manera independiente al expediente de cada socio. Esta desconexión complica el seguimiento de las devoluciones bancarias y dificulta la detección temprana de saldos deudores.
+
+* **Mantenimiento reactivo de la maquinaria:** El reporte de averías o desperfectos en el equipamiento se realiza verbalmente o mediante partes en papel. Esto deriva en un seguimiento deficiente de los tiempos de reparación y en la imposibilidad de llevar un historial de incidencias por máquina que ayude a planificar su sustitución.
+
+---
+
+### Expectativas del Sistema
+
+La implementación de la plataforma **FitManager** tiene como propósito centralizar y automatizar la gestión global del centro deportivo. A partir del análisis de las necesidades del gimnasio, las metas del nuevo sistema se articulan según las expectativas de cada perfil involucrado:
+
+* **Perspectiva del Socio:** Contar con una plataforma intuitiva para revisar sus cuotas y contratos, verificar la disponibilidad real de plazas en las actividades colectivas, formalizar sus reservas y acceder al centro de forma ágil mediante tornos con lectores NFC.
+* **Perspectiva de la Administración:** Disponer de una visión centralizada del expediente de socios y empleados, gestionar la oferta de tarifas, auditar los registros de paso físico, llevar el control automatizado de la facturación y aplicar restricciones de acceso en función del estado contable del usuario.
+* **Perspectiva del Monitor:** Disponer de una herramienta donde consultar su cuadrante de clases asignadas —previniendo solapamientos de horario— y acceder al listado actualizado aforo de cada sesión.
+* **Perspectiva del Personal de Mantenimiento:** Disponer de un canal unificado para la recepción de avisos de avería, facilitando la ordenación por prioridad, el seguimiento del estado de reparación de los equipos y la consulta de su historial.
 ## 2. Glosario de términos
 
 - Términos específicos del dominio del problema, ordenados alfabéticamente. Se valorará la presencia de información multimedia.
