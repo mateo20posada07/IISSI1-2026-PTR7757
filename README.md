@@ -152,9 +152,7 @@ Como personal de limpieza/mantenimiento quiero consultar todas las averías que 
 #### 4.1.1. Requisitos de información
 
 ##### R.I.01. Registro y Expediente del Socio
-Como **Administrador**,  
-quiero **almacenar y consultar el expediente completo de cada socio**  
-para **gestionar sus datos personales, controlar el estado de su cuenta y vincular sus credenciales físicas de acceso**.
+Como **Administrador**,  quiero **almacenar y consultar el expediente completo de cada socio**  para **gestionar sus datos personales, controlar el estado de su cuenta y vincular sus credenciales físicas de acceso**.
 
 **Pruebas de aceptación**
 - El sistema debe verificar que el DNI, el Email y el código del dispositivo NFC introducidos no pertenezcan a un usuario ya registrado en la base de datos.
@@ -163,9 +161,7 @@ para **gestionar sus datos personales, controlar el estado de su cuenta y vincul
 
 
 ##### R.I.02. Expediente e Historial de Trabajadores
-Como **Administrador**,  
-quiero **registrar los datos personales, contractuales y la especialización de cada empleado**  
-para **gestionar la plantilla del gimnasio y organizar la asignación de tareas o clases**.
+Como **Administrador**, quiero **registrar los datos personales, contractuales y la especialización de cada empleado** para **gestionar la plantilla del gimnasio y organizar la asignación de tareas o clases**.
 
 **Pruebas de aceptación**
 - El sistema debe verificar que el DNI y el IBAN del trabajador no estén previamente registrados.
@@ -175,9 +171,7 @@ para **gestionar la plantilla del gimnasio y organizar la asignación de tareas 
 
 
 ##### R.I.03. Catálogo de Tarifas y Oferta Comercial
-Como **Administrador**,  
-quiero **definir y mantener actualizado el catálogo de tarifas y cuotas**  
-para **establecer los precios, periodicidad de cobro y condiciones de uso del gimnasio**.
+Como **Administrador**, quiero **definir y mantener actualizado el catálogo de tarifas y cuotas** para **establecer los precios, periodicidad de cobro y condiciones de uso del gimnasio**.
 
 **Pruebas de aceptación**
 - El sistema debe comprobar que el Nombre de la tarifa sea único en el catálogo.
@@ -185,9 +179,7 @@ para **establecer los precios, periodicidad de cobro y condiciones de uso del gi
 
 
 ##### R.I.04. Historial de Pagos y Transacciones
-Como **Administrador**,  
-quiero **almacenar los registros de todos los cobros y recibos emitidos**  
-para **llevar el control de la facturación, identificar impagos y gestionar vías de cobro**.
+Como **Administrador**, quiero **almacenar los registros de todos los cobros y recibos emitidos** para **llevar el control de la facturación, identificar impagos y gestionar vías de cobro**.
 
 **Pruebas de aceptación**
 - El sistema debe generar un Número de Recibo secuencial y único para cada transacción.
@@ -195,9 +187,7 @@ para **llevar el control de la facturación, identificar impagos y gestionar ví
 
 
 ##### R.I.05. Registro de Fichajes y Accesos Físicos
-Como **Sistema de Control de Acceso**,  
-quiero **almacenar cada intento de lectura del llavero NFC en el torno de entrada**  
-para **mantener la trazabilidad de afluencia y verificar el cumplimiento de las políticas de acceso**.
+Como **Sistema de Control de Acceso**, quiero **almacenar cada intento de lectura del llavero NFC en el torno de entrada** para **mantener la trazabilidad de afluencia y verificar el cumplimiento de las políticas de acceso**.
 
 **Pruebas de aceptación**
 - El sistema debe registrar de forma automática la Fecha y Hora exacta de cada lectura del dispositivo NFC.
@@ -205,9 +195,7 @@ para **mantener la trazabilidad de afluencia y verificar el cumplimiento de las 
 
 
 ##### R.I.06. Planificación de Clases Colectivas
-Como **Monitor**,  
-quiero **consultar la programación de las clases asignadas y el listado de reservas**  
-para **impartir la actividad conociendo el número de plazas ocupadas**.
+Como **Monitor**, quiero **consultar la programación de las clases asignadas y el listado de reservas** para **impartir la actividad conociendo el número de plazas ocupadas**.
 
 **Pruebas de aceptación**
 - Para cada clase colectiva programada se debe guardar: Disciplina, Fecha, Hora de Inicio, Hora Fin, Sala asignada, Aforo máximo y Monitor responsable.
@@ -215,9 +203,7 @@ para **impartir la actividad conociendo el número de plazas ocupadas**.
 
 
 ##### R.I.07. Parte de Incidencias de Maquinaria
-Como **Personal de Mantenimiento**,  
-quiero **registrar y consultar el estado de las máquinas averiadas o en revisión**  
-para **planificar las tareas de reparación y coordinar el estado de las instalaciones**.
+Como **Personal de Mantenimiento**, quiero **registrar y consultar el estado de las máquinas averiadas o en revisión** para **planificar las tareas de reparación y coordinar el estado de las instalaciones**.
 
 **Pruebas de aceptación**
 - El sistema debe guardar obligatoriamente: Código de la máquina, Nombre, Marca, Ubicación, Estado (`Operativa`, `Averiada`, `En Mantenimiento`), Fecha de Reporte, Descripción del fallo y un indicador booleano de si está resuelta (adjuntando la Fecha de reparación en caso afirmativo).
