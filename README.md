@@ -131,7 +131,7 @@ Como monitor quiero listar las clases que imparto, ordenadas por fecha y hora pa
 
 #### R.F.09. Listar averías pendientes de resolver
 
-Como personal de limpieza/mantenimiento quiero listar las averías sin resolver con la máquina afectada para priorizar las reparaciones.
+Como personal de mantenimiento quiero listar las averías sin resolver con la máquina afectada para priorizar las reparaciones.
 
 **Prueba de aceptación**
 
@@ -141,7 +141,7 @@ Como personal de limpieza/mantenimiento quiero listar las averías sin resolver 
 
 #### R.F.10. Consultar el historial de averías de una máquina
 
-Como personal de limpieza/mantenimiento quiero consultar todas las averías que ha tenido una máquina para detectar las que fallan con más frecuencia.
+Como personal de mantenimiento quiero consultar todas las averías que ha tenido una máquina para detectar las que fallan con más frecuencia.
 
 **Prueba de aceptación**
 
@@ -167,7 +167,7 @@ Como **Administrador**, quiero **registrar los datos personales, contractuales y
 - El sistema debe verificar que el DNI y el IBAN del trabajador no estén previamente registrados.
 - Se debe guardar obligatoriamente: DNI, Nombre completo, Teléfono, Email, IBAN, NUSS y Salario Base.
 - En caso de ser *Monitor*, se debe registrar su área de especialidad deportiva.
-- En caso de ser *Personal de Limpieza o Mantenimiento*, se debe registrar su turno de trabajo y zona asignada.
+- En caso de ser *Personal de Mantenimiento*, se debe registrar su turno de trabajo y zona asignada.
 
 
 ##### R.I.03. Catálogo de Tarifas y Oferta Comercial
@@ -228,7 +228,7 @@ Un socio solo puede acceder al centro si su cuenta está en estado "Alta" y no t
 
 ##### R.N.05. Asignación de tareas según el tipo de trabajador
 
-Solo los trabajadores de tipo "Monitor" pueden ser asignados como responsables de clases. El personal de Limpieza/Mantenimiento solo puede tener asignados turnos y tareas de mantenimiento, y no clases.
+Solo los trabajadores de tipo "Monitor" pueden ser asignados como responsables de clases. El personal de Mantenimiento solo puede tener asignado: zona y tareas de mantenimiento, y no clases.
 
 ##### R.N.06. No solapamiento de clases en una misma sala
 
