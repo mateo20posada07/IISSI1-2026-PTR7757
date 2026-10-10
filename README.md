@@ -36,9 +36,59 @@ La implementación de la plataforma **FitManager** tiene como propósito central
 * **Perspectiva de la Administración:** Disponer de una visión centralizada del expediente de socios y empleados, gestionar la oferta de tarifas, auditar los registros de paso físico, llevar el control automatizado de la facturación y aplicar restricciones de acceso en función del estado contable del usuario.
 * **Perspectiva del Monitor:** Disponer de una herramienta donde consultar su cuadrante de clases asignadas —previniendo solapamientos de horario— y acceder al listado actualizado aforo de cada sesión.
 * **Perspectiva del Personal de Mantenimiento:** Disponer de un canal unificado para la recepción de avisos de avería, facilitando la ordenación por prioridad, el seguimiento del estado de reparación de los equipos y la consulta de su historial.
-## 2. Glosario de términos
 
-- Términos específicos del dominio del problema, ordenados alfabéticamente. Se valorará la presencia de información multimedia.
+## 2. Glosario de términos
+**Roles del sistema:**
+* Administrador: Personal encargado de la gestión integral del centro.
+* Monitor: Empleado responsable de impartir las clases colectivas y controlar el aforo en la sala.
+* Personal de mantenimiento: Empleado encargado de la recepción, priorización y resolución de los partes de avería del equipamiento.
+* Socio: Cliente del centro con permisos para consultar su estado contable, realizar reservas y acceder a las instalaciones.
+
+**Planificación:**
+* Aforo máximo: Número límite de asistentes permitidos en una clase colectiva o sala, determinado por motivos de capacidad y seguridad.
+* Clase colectiva: Sesión deportiva programada en una fecha, horario, sala y disciplina concretas, impartida por un monitor.
+* Disciplina: Especialidad deportiva que determina el tipo de sala y equipamiento requerido.
+* Plazas libres: Número de vacantes disponibles para una clase colectiva o sala. Se calcula como la diferencia entre el aforo máximo y el número de reservas confirmadas.
+* Reserva de plazas: Vinculación formal entre un socio y una clase colectiva que le garantiza la asistencia.
+* Sala: Espacio físico del centro asignado a una clase colectiva, donde no se puede producir un solapamiento.
+* Solapamiento: Conflicto horario que ocurre cuando se le asigna la misma hora y día a una misma sala o a un monitor en diferentes clases. 
+
+**Control de acceso:**
+* Dispositivo NFC: Credencial física, en forma de llavero o tarjeta, que debe llevar el socio para identificarse en el centro.
+* Registro de acceso: Evento automático que registra la fecha, hora, torno y resultado del acceso de cada intento de paso del socio.
+* Tiempo de carencia: Periodo mínimo de espera obligatorio (4 horas) entre dos usos seguidos del mismo dispositivo NFC.
+* Torno de acceso: Dispositivo electromecánico que bloquea o permite el acceso tras validar el estado del socio.
+* UID_NFC: Código alfanumérico único grabado en el dispositivo NFC y asociado a un único expediente del socio.
+
+**Gestión económica:**
+* Periodicidad: Duración del ciclo de facturación de una tarifa desde su activación hasta su renovación.
+* Recibo: Documento de cobro generado a un socio, el cual incluye un número de recibo único, el importe, fecha de emisión, estado y método de pago.
+* Tarifa: Oferta comercial contratada por el socio que define el precio, la periodicidad del cobro y los servicios que incluye.
+
+**Equipamiento:**
+* Máquina: Elemento físico diseñado para facilitar la realización de los ejercicios físicos, identificado de forma única mediante un código, una marca y una ubicación.
+* Parte de avería: Registro digital para la notificación, priorización y seguimiento de la reparación de una máquina.
+
+**Valores posibles de los estados:**
+* Estado de acceso: Resultado de la validación en el torno. Puede ser: 
+  *	PERMITIDO (cumple la cuota y el tiempo de carencia).
+  *	DENEGADO (bloqueado por impago, cuenta suspendida o reintento de entrada antes de 4 horas).
+* Estado de la máquina: Situación operativa del equipamiento del centro. Puede ser:
+  *	OPERATIVA (está disponible).
+  *	AVERIADA (tiene una incidencia reportada).
+  *	EN MANTENIMIENTO (está en proceso de reparación).
+* Estado de la reserva: Situación de la plaza de una clase colectiva. Puede ser:
+  *	CONFIRMADA (el socio tiene su plaza reservada).
+  *	CANCELADA (el socio ha dejado su plaza libre).
+* Estado del pago: Situación financiera de un recibo. Puede ser:
+  *	PENDIENTE (el pago ha sido emitido, pero no cobrado).
+  *	PAGADO (el pago ha sido cobrado con éxito).
+  *	DEVUELTO (el pago ha sido rechazado por el banco).
+* Estado del socio: Situación administrativa del socio. Puede ser:
+  *	ALTA (está activo y al corriente).
+  *	BAJA (el socio ha sido desvinculado).
+  *	SUSPENDIDO (el socio ha sido bloqueado por impago).
+
 
 ## 3. Visión general del sistema
 
