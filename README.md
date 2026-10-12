@@ -106,27 +106,27 @@ La implementación de la plataforma **FitManager** tiene como propósito central
 
 ### 3.2. Usuarios del sistema
 
-**Socio**
+**Socio:**
 Cliente del gimnasio. Puede:
 
 - Consultar su estado de cuenta y su NFC de acceso.
 - Reservar y cancelar plazas en clases dirigidas.
 - Consultar su historial de pagos.
 
-**Monitor**
+**Monitor:**
 Trabajador que imparte clases. Puede:
 
 - Consultar su cuadrante de clases asignadas.
 - Ver la lista de socios con reserva en sus clases.
 - Notificar averías del material de su sala.
 
-**Personal de Mantenimiento**
+**Personal de Mantenimiento:**
 Trabajador de limpieza y mantenimiento. Puede:
 
 - Consultar sus turnos, zonas y tareas asignadas.
 - Registrar y actualizar el estado de las averías.
 
-**Administración**
+**Administración:**
 Responsable que gestiona el día a día comercial. Puede:
 
 - Dar de alta, baja y suspender socios.
@@ -350,9 +350,7 @@ Una sala no puede tener programadas dos clases cuyo día y hora se solapen. Adem
 **Pruebas de aceptación**
 - Positiva: Dada la sala de Spinning con una clase el martes de 18:00 a 19:00, cuando se programa una clase de Spinning el mismo día de 19:00 a 20:00, entonces la clase se guarda correctamente.
 
-- Negativa: Se rechaza la programación en estos dos casos:
-   Una clase de Spinning el martes de 18:30 a 19:30 en la misma sala (solapamiento).
-   Una clase de Pilates en la sala de Spinning (sala no adecuada a su disciplina).
+- Negativa: Se rechaza la programación en estos dos casos: una clase de Spinning el martes de 18:30 a 19:30 en la misma sala (solapamiento) o una clase de Pilates en la sala de Spinning (sala no adecuada a su disciplina).
 
 ### 4.2. Mapa de historias de usuario (opcional)
 
