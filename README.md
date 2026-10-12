@@ -34,7 +34,7 @@ La implementación de la plataforma **FitManager** tiene como propósito central
 
 * **Perspectiva del Socio:** Contar con una plataforma intuitiva para revisar sus cuotas y contratos, verificar la disponibilidad real de plazas en las actividades colectivas, formalizar sus reservas y acceder al centro de forma ágil mediante tornos con lectores NFC.
 * **Perspectiva de la Administración:** Disponer de una visión centralizada del expediente de socios y empleados, gestionar la oferta de tarifas, auditar los registros de paso físico, llevar el control automatizado de la facturación y aplicar restricciones de acceso en función del estado contable del usuario.
-* **Perspectiva del Monitor:** Disponer de una herramienta donde consultar su cuadrante de clases asignadas —previniendo solapamientos de horario— y acceder al listado actualizado aforo de cada sesión.
+* **Perspectiva del Monitor:** Disponer de una herramienta donde consultar su cuadrante de clases asignadas —previniendo solapamientos de horario— , acceder al listado actualizado aforo de cada sesión y notificar averías.
 * **Perspectiva del Personal de Mantenimiento:** Disponer de un canal unificado para la recepción de avisos de avería, facilitando la ordenación por prioridad, el seguimiento del estado de reparación de los equipos y la consulta de su historial.
 
 ## 2. Glosario de términos
@@ -93,7 +93,6 @@ La implementación de la plataforma **FitManager** tiene como propósito central
 ## 3. Visión general del sistema
 
 ### 3.1. Requisitos generales
-### 3.1. Requisitos generales
 
 - **RG.01. Gestión de usuarios:** El sistema tiene que guardar todos los datos personales y contratos tanto de los socios como de los trabajadores, controlando en todo momento si una cuenta está de alta, de baja o suspendida.
 
@@ -106,6 +105,34 @@ La implementación de la plataforma **FitManager** tiene como propósito central
 - **RG.05. Averías y mantenimiento:** La plataforma debe permitir registrar si una máquina se rompe, para que el personal de mantenimiento sepa qué reparar y quede guardado un historial de todas las incidencias del gimnasio.
 
 ### 3.2. Usuarios del sistema
+
+**Socio**
+Cliente del gimnasio. Puede:
+
+- Consultar su estado de cuenta y su NFC de acceso.
+- Reservar y cancelar plazas en clases dirigidas.
+- Consultar su historial de pagos.
+
+**Monitor**
+Trabajador que imparte clases. Puede:
+
+- Consultar su cuadrante de clases asignadas.
+- Ver la lista de socios con reserva en sus clases.
+- Notificar averías del material de su sala.
+
+**Personal de Mantenimiento**
+Trabajador de limpieza y mantenimiento. Puede:
+
+- Consultar sus turnos, zonas y tareas asignadas.
+- Registrar y actualizar el estado de las averías.
+
+**Administración**
+Responsable que gestiona el día a día comercial. Puede:
+
+- Dar de alta, baja y suspender socios.
+- Gestionar tarifas, cobros, remesas y recibos devueltos.
+- Gestionar las salas y sus aforos.
+- Asignar cuadrantes y clases.
 
 ## 4. Catálogo de requisitos
 
@@ -275,26 +302,57 @@ Como **Personal de Mantenimiento**, quiero **registrar y consultar el estado de 
 
  No se podrá acceder por el torno más de una vez con el mismo NFC hasta que no hayan transcurrido 4 horas de su último uso.
 
+**Pruebas de aceptación**
+- Positiva: Dado un socio cuyo último acceso con su NFC fue a las 10:00, cuando lo usa de nuevo en el torno a las 14:30, entonces el acceso se registra y el torno se abre.
+
+- Negativa: Dado un socio cuyo último acceso fue a las 10:00, cuando intenta entrar con su mismo NFC a las 12:00, entonces el sistema deniega el acceso y no registra ningún acceso nuevo.
+
 ##### R.N.02. Límite de reservas por aforo
 
 El número de reservas confirmadas para una clase no puede superar el aforo disponible.
+
+**Pruebas de aceptación**
+- Positiva: Dada una clase con aforo 20 y 19 reservas confirmadas, cuando un socio reserva plaza, entonces la reserva se confirma (20/20).
+
+- Negativa: Dada una clase con aforo 20 y 20 reservas confirmadas, cuando otro socio intenta reservar, entonces el sistema rechaza la reserva y el número de reservas sigue en 20.
 
 ##### R.N.03. No duplicidad de horarios del monitor
 
 Un monitor no puede tener asignadas dos clases cuyo día y hora se solapen.
 
+**Pruebas de aceptación**
+- Positiva: Dado un monitor con una clase el lunes de 10:00 a 11:00, cuando se le asigna otra clase el lunes de 11:00 a 12:00, entonces la asignación se guarda correctamente.
+
+- Negativa: Dado el mismo monitor con la clase del lunes de 10:00 a 11:00, cuando se le asigna otra clase el lunes de 10:30 a 11:30, entonces el sistema rechaza la asignación por solapamiento.
+
 ##### R.N.04. Acceso condicionado al estado del socio
 
-Un socio solo puede acceder al centro si su cuenta está en estado "Alta" y no tiene recibos impagados. Si está en "Baja" o "Suspendida", el torno deniega la entrada.
+Un socio solo puede acceder al centro si su cuenta está en estado "Alta" y no tiene recibos impagados.
+
+**Pruebas de aceptación**
+- Positiva: Dado un socio en estado “Alta” sin recibos impagados, cuando pasa su NFC por el torno, entonces se autoriza la entrada.
+
+- Negativa: Dado un socio en estado “Suspendido” , “Baja”, o “Alta” con un recibo devuelto, cuando pasa su NFC por el torno, entonces el torno deniega la entrada y no se registra acceso.
 
 ##### R.N.05. Asignación de tareas según el tipo de trabajador
 
-Solo los trabajadores de tipo "Monitor" pueden ser asignados como responsables de clases. El personal de Mantenimiento solo puede tener asignado: zona y tareas de mantenimiento, y no clases.
+Solo los trabajadores de tipo "Monitor" pueden ser asignados como responsables de clases. El "Personal de Mantenimiento" solo puede tener asignado zona y tareas de mantenimiento, y no clases.
+
+**Pruebas de aceptación**
+- Positiva: Dado un trabajador de tipo “Monitor”, cuando se le asigna como responsable de una clase, entonces la asignación se guarda correctamente.
+
+- Negativa: Dado un trabajador de tipo “Personal de Mantenimiento”, cuando se intenta asignarlo como responsable de una clase, entonces el sistema rechaza la operación.
 
 ##### R.N.06. No solapamiento de clases en una misma sala
 
 Una sala no puede tener programadas dos clases cuyo día y hora se solapen. Además, la clase debe impartirse en una sala adecuada a su disciplina (por ejemplo, Spinning en la sala de Spinning).
 
+**Pruebas de aceptación**
+- Positiva: Dada la sala de Spinning con una clase el martes de 18:00 a 19:00, cuando se programa una clase de Spinning el mismo día de 19:00 a 20:00, entonces la clase se guarda correctamente.
+
+- Negativa: Se rechaza la programación en estos dos casos:
+   Una clase de Spinning el martes de 18:30 a 19:30 en la misma sala (solapamiento).
+   Una clase de Pilates en la sala de Spinning (sala no adecuada a su disciplina).
 
 ### 4.2. Mapa de historias de usuario (opcional)
 
