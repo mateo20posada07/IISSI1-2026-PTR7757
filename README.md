@@ -93,6 +93,17 @@ La implementación de la plataforma **FitManager** tiene como propósito central
 ## 3. Visión general del sistema
 
 ### 3.1. Requisitos generales
+### 3.1. Requisitos generales
+
+- **RG.01. Gestión de usuarios:** El sistema tiene que guardar todos los datos personales y contratos tanto de los socios como de los trabajadores, controlando en todo momento si una cuenta está de alta, de baja o suspendida.
+
+- **RG.02. Control de los tornos:** La aplicación se encargará de gestionar las entradas físicas al gimnasio leyendo el NFC de los socios. Solo abrirá el torno si el cliente está al corriente de pago y si ha pasado el tiempo mínimo obligatorio desde su última entrada.
+
+- **RG.03. Pagos y tarifas:** El sistema debe controlar las distintas cuotas que ofrece el centro, generar los recibos y bloquear automáticamente el acceso y las reservas a los socios que devuelvan un recibo o dejen de pagar.
+
+- **RG.04. Reservas y clases dirigidas:** Tiene que haber un horario donde los socios puedan apuntarse a las clases. El sistema se asegurará de que nunca se apunte más gente del aforo permitido en la sala y de que a los monitores no se les solapen las clases.
+
+- **RG.05. Averías y mantenimiento:** La plataforma debe permitir registrar si una máquina se rompe, para que el personal de mantenimiento sepa qué reparar y quede guardado un historial de todas las incidencias del gimnasio.
 
 ### 3.2. Usuarios del sistema
 
@@ -102,7 +113,7 @@ La implementación de la plataforma **FitManager** tiene como propósito central
 
 #### R.F.01. Listar socios por estado
 
-Como administrador quiero listar los socios filtrando por estado (alta, baja o suspendido) para conocer la situación de la base de socios.
+Como **administrador** quiero **listar los socios filtrando por estado (alta, baja o suspendido)** para **conocer la situación de la base de socios.**
 
 **Prueba de aceptación**
 
@@ -112,7 +123,7 @@ Como administrador quiero listar los socios filtrando por estado (alta, baja o s
 
 #### R.F.02. Consultar el historial de accesos de un socio
 
-Como administrador quiero consultar los accesos de un socio a las instalaciones para revisar su asistencia y los intentos de entrada denegados.
+Como **administrador** quiero **consultar los accesos de un socio a las instalaciones** para **revisar su asistencia y los intentos de entrada denegados.**
 
 **Prueba de aceptación**
 
@@ -122,7 +133,7 @@ Como administrador quiero consultar los accesos de un socio a las instalaciones 
 
 #### R.F.03. Listar recibos por estado de pago
 
-Como administrador quiero listar los recibos filtrando por estado (pendiente, pagado o devuelto) para controlar los impagos y las devoluciones.
+Como **administrador** quiero **listar los recibos filtrando por estado (pendiente, pagado o devuelto)** para **controlar los impagos y las devoluciones.**
 
 **Prueba de aceptación**
 
@@ -132,7 +143,7 @@ Como administrador quiero listar los recibos filtrando por estado (pendiente, pa
 
 #### R.F.04. Consultar mis pagos
 
-Como socio quiero consultar mis recibos y la tarifa que tengo contratada para saber qué he pagado y qué me falta por pagar.
+Como **socio** quiero **consultar mis recibos y la tarifa que tengo contratada** para **saber qué he pagado y qué me falta por pagar.**
 
 **Prueba de aceptación**
 
@@ -142,7 +153,7 @@ Como socio quiero consultar mis recibos y la tarifa que tengo contratada para sa
 
 #### R.F.05. Consultar las clases colectivas con plazas disponibles
 
-Como socio quiero listar las clases colectivas programadas con las plazas libres que quedan para elegir a cuál quiero asistir.
+Como **socio** quiero **listar las clases colectivas programadas con las plazas libres que quedan** para **elegir a cuál quiero asistir.**
 
 **Prueba de aceptación**
 
@@ -151,7 +162,7 @@ Como socio quiero listar las clases colectivas programadas con las plazas libres
 
 #### R.F.06. Consultar mis reservas
 
-Como socio quiero consultar mis reservas de clases colectivas y su estado (confirmada o cancelada) para recordar a qué clases tengo que ir.
+Como **socio** quiero **consultar mis reservas de clases colectivas y su estado (confirmada o cancelada)** para **recordar a qué clases tengo que ir.**
 
 **Prueba de aceptación**
 
@@ -161,7 +172,7 @@ Como socio quiero consultar mis reservas de clases colectivas y su estado (confi
 
 #### R.F.07. Consultar la lista de asistentes de una clase
 
-Como monitor quiero consultar el número de socios con reserva confirmada en una de mis clases para saber cuántas personas van a asistir.
+Como **monitor** quiero **consultar el número de socios con reserva confirmada en una de mis clases** para **saber cuántas personas van a asistir.**
 
 **Prueba de aceptación**
 
@@ -171,7 +182,7 @@ Como monitor quiero consultar el número de socios con reserva confirmada en una
 
 #### R.F.08. Consultar mi horario de clases
 
-Como monitor quiero listar las clases que imparto, ordenadas por fecha y hora para organizar mi jornada.
+Como **monitor** quiero **listar las clases que imparto, ordenadas por fecha y hora** para **organizar mi jornada.**
 
 **Prueba de aceptación**
 
@@ -181,7 +192,7 @@ Como monitor quiero listar las clases que imparto, ordenadas por fecha y hora pa
 
 #### R.F.09. Listar averías pendientes de resolver
 
-Como personal de mantenimiento quiero listar las averías sin resolver con la máquina afectada para priorizar las reparaciones.
+Como **personal de mantenimiento** quiero **listar las averías sin resolver con la máquina afectada** para **priorizar las reparaciones.**
 
 **Prueba de aceptación**
 
@@ -191,7 +202,7 @@ Como personal de mantenimiento quiero listar las averías sin resolver con la m�
 
 #### R.F.10. Consultar el historial de averías de una máquina
 
-Como personal de mantenimiento quiero consultar todas las averías que ha tenido una máquina para detectar las que fallan con más frecuencia.
+Como **personal de mantenimiento** quiero **consultar todas las averías que ha tenido una máquina** para **detectar las que fallan con más frecuencia.**
 
 **Prueba de aceptación**
 
