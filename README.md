@@ -287,13 +287,30 @@ Una sala no puede tener programadas dos clases cuyo día y hora se solapen. Adem
 
 ### 4.2. Mapa de historias de usuario (opcional)
 
-### 4.3. Requisitos no funcionales (opcional)
+### 4.3. Requisitos no funcionales
+##### R.N.F. 01. Latencia en la validación de acceso NFC
+Como **Administrador**, quiero **procesar la lectura del llavero NFC, consultar el estado del socio y responder al torno electromecánico en menos de 1 segundo (esperado < 500 ms)** para **evitar la formación de colas en los tornos durante las horas de máxima afluencia**.
 
-**R.N.F. 01. Título requisito no funcional**
-Como [tipo de usuario]
-quiero [servicio]
-para [razón]
+##### R.N.F. 02. Disponibilidad 24/7
+Como **Administrador**, quiero **que la disponibilidad del sistema sea del 99.5%** para **que cada socio pueda consultar el estado de su cuenta o realizar cambios en sus datos personales cuando lo desee**.
 
+##### R.N.F. 03. Privacidad del usuario y cifrado de datos
+Como **Socio**, quiero **que mi información fiscal y bancaria (IBAN) sea almacenada mediante cifrado, únicamente descifrable para el Administrador** para **proteger mi privacidad y evitar la exposición o fuga de mis datos personales**.
+
+##### R.N.F. 04. Reserva intuitiva en aplicación móvil
+Como **Socio**, quiero **que la aplicación móvil permita que la reserva de las clases se pueda realizar como máximo en 4 toques** para **facilitar la experiencia del usuario sin necesidad de un conocimiento previo**.
+
+##### R.N.F. 05. Notificación para agilización de la atención presencial
+Como **Administrador**, quiero **disponer de un sistema de avisos/alertas en el panel de recepción para atender a los socios en mostrador en un tiempo inferior a 50 segundos** para **agilizar la atención al cliente presencial y minimizar los tiempos de espera**.
+
+##### R.N.F. 06. Restricción de interfaz para el personal de mantenimiento (Seguridad y Privacidad)
+Como **Personal de Mantenimiento**, quiero **visualizar únicamente la sección de partes de avería e incidencias de maquinaria** para **garantizar la privacidad de los datos personales y bancarios de los socios y trabajadores**.
+
+##### R.N.F. 07. Expiración automática de la sesión por inactividad
+Como **Administrador**, quiero **que la sesión activa se cierre de forma automática tras 10 minutos continuos de inactividad** para **evitar usos no autorizados en los ordenadores de la recepción cuando el puesto quede desatendido**.
+
+##### R.N.F. 08. Tolerancia a fallos en la validación de acceso (Resiliencia)
+Como **Administrador**, quiero **que el torno registre temporalmente las lecturas NFC en modo local en caso de desconexión con el servidor** para **permitir el paso fluido de socios y sincronizar los accesos automáticamente una vez restablecida la red**.
 -- fin entregable 1 --
 
 ## 5. Modelo conceptual
