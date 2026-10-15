@@ -378,6 +378,7 @@ Como **Administrador**, quiero **que la sesión activa se cierre de forma autom�
 
 ##### R.N.F. 08. Tolerancia a fallos en la validación de acceso (Resiliencia)
 Como **Administrador**, quiero **que el torno registre temporalmente las lecturas NFC en modo local en caso de desconexión con el servidor** para **permitir el paso fluido de socios y sincronizar los accesos automáticamente una vez restablecida la red**.
+
 -- fin entregable 1 --
 
 ## 5. Modelo conceptual
