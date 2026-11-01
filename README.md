@@ -7,10 +7,7 @@
 3. Pablo Morales, Adrián
 4. González García, Valeria
 
-## 1. Introducción al problema
-
-# 1. Introducción al problema
-# 1. Introducción y Planteamiento del Problema
+## 1. Introducción y Planteamiento del problema
 
 **FitManager** es una plataforma integral de gestión diseñada para centros deportivos. Su modelo operativo abarca áreas de musculación, entrenamiento funcional y una oferta variada de disciplinas dirigidas (como Spinning, Pilates o Yoga). La dinámica diaria del centro implica la interacción constante de cuatro perfiles de usuario: equipo de administración, cuerpo técnico/monitores, personal de mantenimiento y servicios, y los propios socios.
 
