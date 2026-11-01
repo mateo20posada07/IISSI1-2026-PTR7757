@@ -389,7 +389,7 @@ Como **Administrador**, quiero **que el torno registre temporalmente las lectura
 
 ### 5.2. Escenarios de prueba
 
-![Diagrama de Objetos](https://github.com/mateo20posada07/IISSI1-2026-PTR7757/blob/main/TrazaDeDiagrama.png)
+![Diagrama de Objetos]
 
 ## 6. Matrices de trazabilidad
 
