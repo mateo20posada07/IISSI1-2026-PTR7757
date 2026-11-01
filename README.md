@@ -385,7 +385,99 @@ Como **Administrador**, quiero **que el torno registre temporalmente las lectura
 
 ### 5.1. Diagramas de clases UML
 
-- con restricciones.
+```mermaid
+classDiagram
+    class Usuario {
+        +String dni
+        +String nombre
+        +String apellido
+        +Integer telefono
+        +String email
+        +date fechaNacimiento
+        +String dierccion
+    }
+    class Trabajador {
+        +Integer nuss
+        +Double salarioBase
+        +Turno turnoTrabajo
+        +String IBAN
+    }
+    class Cliente {
+        +EstadoSocio estado
+        +String codigoLlavero
+        +String IBAN
+    }
+    class Monitor {
+        +String especialidadDeportiva
+    }
+    class PersonalMantenimiento {
+        +String zonaAsignada
+    }
+    class Administrador
+
+    Usuario <|-- Administrador
+    Usuario <|-- Trabajador
+    Usuario <|-- Cliente
+    Trabajador <|-- Monitor
+    Trabajador <|-- PersonalMantenimiento
+
+    class Tarifa {
+        +String nombreTarifa
+        +Double precio
+        +String periodicidad
+        +Boolean incluyeClasesColectivas
+    }
+    class Recibo {
+        +String numeroRecibo
+        +date fechaEmision
+        +date fechaPago
+        +Double importe
+        +MetodoPago metodoPago
+        +EstadoPago estadoPago
+    }
+    class Reserva {
+        +date fechaReservada
+        +EstadoReserva estadoReserva
+    }
+    class ClaseColectiva {
+        +String disciplina
+        +date fecha
+        +time horaInicio
+        +time horaFin
+        +String salaAsignada
+        +Integer aforoMax
+        +Integer aforoRestante
+    }
+    class Acceso {
+        +date fecha
+        +time horaExacta
+        +Integer tornoEntrada
+        +EstadoAcceso resultadoAcceso
+    }
+    class Averia {
+        +EstadoMaquina estado
+        +date fechaReporte
+        +String descripcionFallo
+        +Boolean estaResuelta
+        +date fechaReparacion
+    }
+    class Maquina {
+        +Integer codigoMaquina
+        +String nombre
+        +String marca
+        +String ubicacion
+    }
+
+    Cliente "1" -- "*" Tarifa : contrata
+    Cliente "1" -- "*" Recibo : recibe
+    Cliente "1" -- "*" Acceso : realiza
+    Cliente "1" -- "*" Reserva : realiza
+    Tarifa "1" -- "*" Recibo : pertenece
+    Reserva "*" -- "1" ClaseColectiva : contiene
+    Monitor "1" -- "*" ClaseColectiva : imparte
+    PersonalMantenimiento "1" -- "*" Averia : realiza
+    Averia "*" -- "1" Maquina : registra
+```
 
 ### 5.2. Escenarios de prueba
 
